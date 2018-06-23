@@ -1,0 +1,12 @@
+.table-hight-custom{
+	height: 35px !important;
+}
+.custom-button-position{
+	text-align: left !important;
+}
+.vertical-center-row {
+    margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	padding: 200px;
+}

@@ -1,0 +1,20 @@
+<div class = "container text-center"> 
+  <div class = "row vertical-center-row">
+  	<div ng-show="gameOver != true" ng-keydown="key($event)" tabindex="0" data-ng-init="init()" class="marioInitialFocus">
+		<table border=1 class="table table-striped">
+			<tr ng-repeat="grid_row in grid_rows" ng-init="outerIndex = $index">
+				<td class="table-hight-custom" ng-repeat="grid_column in grid_columns" width="{{width}}%" ng-init="innerIndex = $index">
+					<img ng-show="randomFood.indexOf('row{{outerIndex}}:column{{innerIndex}}') != -1" src="assets/images/food.png"/>
+					<img id="mario-position-{{outerIndex}}-{{innerIndex}}" class="mario-position" ng-show="MarioPosition.indexOf('row{{outerIndex}}:column{{innerIndex}}') != -1" src="assets/images/mario.jpg"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div ng-show="gameOver == true">
+		<h2>Game Over</h2></br>
+		<h3> Your Score is {{totalMoved}}</h3>
+		<h3> Play Again <input type="button" class = "btn btn-primary btnblock" value="Play Again" ng-click="playAgain()" ></h3>
+	</div>
+  </div>
+</div>
